@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../static/styles.css" rel="stylesheet">
+  <title>MovieMood</title>
+</head>
+<body class="index">
+  <div class="container">
+    <h1>Welcome on MovieMood</h1>
+    <p>Find the perfect movie based on your mood for the day !</p>
+    <form action="/recommendations" method="get">
+        <select name="mood" class="btn">
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="angry">Angry</option>
+            <option value="bored">Bored</option>
+            <option value="curious">Curious</option>
+            <option value="childish">Childish</option>
+        </select>
+        <input type="submit" value="Find a movie" class="btn">
+    </form>
+  </div>
+</body>
+</html>

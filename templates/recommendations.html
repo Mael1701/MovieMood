@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../static/styles.css" rel="stylesheet">
+  <title>MovieMood</title>
+</head>
+<body class="index">
+  <a href="/">
+    <button class="btn">HOME</button>
+</a>
+  <h1>Suggestions :</h1>
+  <!-- On vérifie d'abord que des films ont été trouvés -->
+  {% if movies is not none %}
+    <!-- Puis on crée un bloc pour chaque film -->
+    {% for movie in movies %}
+  <div class="movie">
+    <h2 class="title">{{ movie.title }}</h2>
+    <!-- Create a flex container to hold the image and the overview -->
+    <div class="movie-content">
+      <!-- Image of the movie -->
+      <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} poster" class="poster">
+      <!-- Overview of the movie -->
+      <div class="overview">
+        <p>{{ movie.overview }}</p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+  {% else %}
+    <p>Aucun film trouvé pour cette humeur. Veuillez réessayer.</p>
+  {% endif %}
+</body>
+</html>
